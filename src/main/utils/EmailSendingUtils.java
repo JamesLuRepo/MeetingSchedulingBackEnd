@@ -38,4 +38,10 @@ public class EmailSendingUtils {
             return 0;
         }
     }
+
+    public static void main(String[] args) {
+        int i = sendVerificationCode("ziyulu45@gmail.com", "8986");
+        System.out.println(i);
+    }
+
 }
