@@ -19,10 +19,10 @@ import java.io.PrintWriter;
 public class MeetingModify extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MeetingService meetingService = new MeetingServiceImpl();
-        BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream(),"utf-8"));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(request.getInputStream(),"utf-8"));
         String line = null;
         StringBuilder str = new StringBuilder();
-        while ((line = br.readLine()) != null) {
+        while ((line = bufferedReader.readLine()) != null) {
             str.append(line);
         }
         ObjectMapper objectMapper= new ObjectMapper();
