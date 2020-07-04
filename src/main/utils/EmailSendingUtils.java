@@ -5,6 +5,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
+/**
+ * For security consideration, I closed this function in the mail server.
+ */
 public class EmailSendingUtils {
 
     /**
@@ -20,7 +23,8 @@ public class EmailSendingUtils {
         properties.put("mail.smtp.auth", "true");
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             public PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("meeting_scheduling@qq.com", "ezxwwbeokdnybfad"); //发件人邮件用户名、授权码
+                //sensitive information was eliminated.
+                return new PasswordAuthentication("", "");
             }
         });
 
@@ -40,7 +44,7 @@ public class EmailSendingUtils {
     }
 
     public static void main(String[] args) {
-        int i = sendVerificationCode("ziyulu45@gmail.com", "8986");
+        int i = sendVerificationCode("", "8986");
         System.out.println(i);
     }
 
